@@ -1,4 +1,4 @@
-class monstreviolet extends ObjetEnnemi{
+class monstre3 extends ObjetEnnemi{
     /**
      *
      * @param {Tableau} scene
@@ -6,17 +6,15 @@ class monstreviolet extends ObjetEnnemi{
      * @param y
      */
     constructor(scene, x, y) {
-        super(scene, x, y, "monster-violet");
+        super(scene, x, y, "monstre3");
         this.body.allowGravity=true;
 
         this.setOrigin(10,0);
 
-        this.setDisplaySize(64,64);
+        this.setDisplaySize(40,100);
         this.setVelocityX(50);
         this.setCollideWorldBounds(true);
         this.setBounce(1);
     }
 
 }
-
-
