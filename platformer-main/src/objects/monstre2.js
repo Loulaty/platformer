@@ -9,12 +9,12 @@ class monstre2 extends ObjetEnnemi{
         super(scene, x, y, "monstre2");
         this.body.allowGravity=true;
 
-        this.setOrigin(20,30);
+        this.setOrigin(10,0);
 
         this.setDisplaySize(64,64);
         this.setVelocityX(50);
         this.setCollideWorldBounds(true);
-        this.setBounce(1);
+        this.setBounce(0.9);
     }
 
 }
