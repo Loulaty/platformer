@@ -15,7 +15,6 @@ class monstre2 extends ObjetEnnemi{
         this.setVelocityX(100);
         this.setCollideWorldBounds(true);
         this.setBounce(1);
-        this.physics.add.overlap(this.player, this.monstre, this.hitSpike, null, this);
     }
 
 }
