@@ -18,7 +18,7 @@ class Zoo extends Tableau{
 
         let groupeVert = this.physics.add.staticGroup();
         groupeVert.create(10, 250, 'ground');
-        groupeVert.create(60, 320, 'ground');
+        groupeVert.create(100, 320, 'ground');
        
         groupeVert.children.iterate(function (child) {
             child.allowGravity=false;
