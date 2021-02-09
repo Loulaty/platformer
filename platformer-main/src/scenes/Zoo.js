@@ -17,11 +17,11 @@ class Zoo extends Tableau{
         super.create();
 
         let groupeVert = this.physics.add.staticGroup();
-        groupeVert.create(500, 250, 'ground');
+        groupeVert.create(0, 250, 'ground');
        
         groupeVert.children.iterate(function (child) {
             child.setTintFill(0x00FF00); //applique une couleur verte
-            child.setDisplaySize(40,50);//taille de l'objet
+            child.setDisplaySize(40,100);//taille de l'objet
             child.setOrigin(0,0);//pour positionner plus facilement
             child.refreshBody();//dit au groupe d'appliquer les changements
         });
