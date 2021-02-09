@@ -11,6 +11,8 @@ class Tableau08 extends Tableau{
     create() {
         super.create();
 
+        new monstreviolet(this,50,350);
+
         //on définit la taille du tableau
         let largeurDuTableau=4000;
         let hauteurDuTableau=600; //la hauteur est identique au cadre du jeu
@@ -33,7 +35,6 @@ class Tableau08 extends Tableau{
         this.physics.add.overlap(this.player, this.stars, this.ramasserEtoile, null, this);
         this.physics.add.collider(this.player,this.platforms);
 
-        new monstreviolet(this,50,350);
 
         //on change de ciel, on fait une tileSprite ce qui permet d'avoir une image qui se répète
         this.sky=this.add.tileSprite(
@@ -60,10 +61,10 @@ class Tableau08 extends Tableau{
 
 
         //fait passer les éléments devant le ciel
-        this.monstreviolet.setDepth(10);
         this.platforms.setDepth(10);
         this.stars.setDepth(10);
         this.player.setDepth(10);
+        this.monstreviolet.setDepth(10);
     }
 
     update(){
