@@ -20,6 +20,7 @@ class Zoo extends Tableau{
         groupeVert.create(10, 250, 'ground');
        
         groupeVert.children.iterate(function (child) {
+            child.allowGravity=false;
             child.setDisplaySize(100,50);//taille de l'objet
             child.setOrigin(0,0);//pour positionner plus facilement
             child.refreshBody();//dit au groupe d'appliquer les changements
