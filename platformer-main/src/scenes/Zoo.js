@@ -23,6 +23,15 @@ class Zoo extends Tableau{
         groupeVert.create(450, 280, 'ground');
         groupeVert.create(500, 290, 'ground');
         groupeVert.create(700, 300, 'ground');
+
+        groupeVert.children.iterate(function (child) {
+            child.setTintFill(0x00FF00); //applique une couleur verte
+            child.setDisplaySize(40,50);//taille de l'objet
+            child.setOrigin(0,0);//pour positionner plus facilement
+            child.refreshBody();//dit au groupe d'appliquer les changements
+        });
+
+        this.physics.add.collider(this.player, groupeVert);//le joueur rebondit sur les plateformes du goupe vert
         
         //etoile
         this.star3=this.physics.add.sprite(900,100,"star");
