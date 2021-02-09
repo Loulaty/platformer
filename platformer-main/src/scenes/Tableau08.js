@@ -63,7 +63,6 @@ class Tableau08 extends Tableau{
         this.platforms.setDepth(10);
         this.stars.setDepth(10);
         this.player.setDepth(10);
-        this.monstreviolet.setDepth(20);
     }
 
     update(){
