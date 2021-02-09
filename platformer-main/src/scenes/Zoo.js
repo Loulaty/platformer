@@ -17,7 +17,7 @@ class Zoo extends Tableau{
         super.create();
 
         let groupeVert = this.physics.add.staticGroup();
-        groupeVert.create(0, 250, 'ground');
+        groupeVert.create(10, 250, 'ground');
        
         groupeVert.children.iterate(function (child) {
             child.setTintFill(0x00FF00); //applique une couleur verte
