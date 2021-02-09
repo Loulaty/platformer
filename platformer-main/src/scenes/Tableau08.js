@@ -4,7 +4,7 @@ class Tableau08 extends Tableau{
         super.preload();
         this.load.image('star', 'assets/star.png');
         this.load.image('ground', 'assets/platform.png');
-        this.load.image('sky-2', 'assets/sky-2.jpg');
+        this.load.image('sky-2', 'assets/sky-2.png');
     }
     create() {
         super.create();
