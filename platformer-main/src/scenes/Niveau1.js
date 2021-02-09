@@ -16,6 +16,47 @@ class Niveau1 extends Tableau{
     create() {
         super.create();
 
+        
+        //tableau long////////////////////////////////////////////////////////////
+        let largeurDuTableau=4000;
+        let hauteurDuTableau=600; //la hauteur est identique au cadre du jeu
+        this.cameras.main.setBounds(0, 0, largeurDuTableau, hauteurDuTableau);
+        this.physics.world.setBounds(0, 0, largeurDuTableau,  hauteurDuTableau);
+
+        this.cameras.main.startFollow(this.player, false, 0.05, 0.05);
+
+        this.sky=this.add.tileSprite(
+            0,
+            0,
+            this.sys.canvas.width,
+            this.sys.canvas.height,
+            'sky-2'
+        );
+        this.sky.setOrigin(0,0);
+        this.sky.setScrollFactor(0);//fait en sorte que le ciel ne suive pas la caméra
+        //on ajoute une deuxième couche de ciel
+        this.sky2=this.add.tileSprite(
+            0,
+            0,
+            this.sys.canvas.width,
+            this.sys.canvas.height,
+            'sky'
+        );
+        this.sky2.setScrollFactor(0);
+        this.sky2.setOrigin(0,0);
+        this.sky2.alpha=0;
+        //this.sky.tileScaleX=this.sky.tileScaleY=0.8;
+
+
+        //fait passer les éléments devant le ciel
+        this.platforms.setDepth(10);
+        this.stars.setDepth(10);
+        this.player.setDepth(10);
+        this.monstreviolet.setDepth(20);
+    
+
+        ///////////////////////////////////////////////////////////////////////
+
         let groupeVert = this.physics.add.staticGroup();
         groupeVert.create(10, 250, 'ground');
         groupeVert.create(150, 320, 'ground');
@@ -48,5 +89,16 @@ class Niveau1 extends Tableau{
 
         
     }
+
+    update(){
+        super.update();
+        //le ciel se déplace moins vite que la caméra pour donner un effet paralax
+        this.sky.tilePositionX=this.cameras.main.scrollX*0.6;
+        this.sky.tilePositionY=this.cameras.main.scrollY*0.2;
+        //le deuxième ciel se déplace moins vite pour accentuer l'effet
+        this.sky2.tilePositionX=this.cameras.main.scrollX*0.3+500;
+        this.sky2.tilePositionY=this.cameras.main.scrollY*0.1+30;
+    }
+
 
 }
