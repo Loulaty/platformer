@@ -53,7 +53,7 @@ class Tableau08 extends Tableau{
         );
         this.sky2.setScrollFactor(0);
         this.sky2.setOrigin(0,0);
-        this.sky2.alpha=0.2;
+        this.sky2.alpha=0;
         //this.sky.tileScaleX=this.sky.tileScaleY=0.8;
 
 
