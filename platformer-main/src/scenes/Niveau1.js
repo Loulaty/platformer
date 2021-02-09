@@ -19,6 +19,9 @@ class Niveau1 extends Tableau{
         let groupeVert = this.physics.add.staticGroup();
         groupeVert.create(10, 250, 'ground');
         groupeVert.create(150, 320, 'ground');
+        groupeVert.create(270, 240, 'ground');
+        groupeVert.create(380, 200, 'ground');
+        groupeVert.create(490, 140, 'ground');
        
         groupeVert.children.iterate(function (child) {
             child.allowGravity=false;
