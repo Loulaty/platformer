@@ -6,6 +6,7 @@ class Tableau08 extends Tableau{
         this.load.image('ground', 'assets/platform.png');
         this.load.image('sky-2', 'assets/sky-2.png');
         this.load.image('sky', 'assets/sky.png');
+        this.load.image('monstre-violet', 'assets/monstre-violet.png');
     }
     create() {
         super.create();
@@ -31,7 +32,7 @@ class Tableau08 extends Tableau{
         }
         this.physics.add.overlap(this.player, this.stars, this.ramasserEtoile, null, this);
         this.physics.add.collider(this.player,this.platforms);
-        
+
         new monstreviolet(this,50,350);
 
         //on change de ciel, on fait une tileSprite ce qui permet d'avoir une image qui se répète
@@ -62,7 +63,7 @@ class Tableau08 extends Tableau{
         this.platforms.setDepth(10)
         this.stars.setDepth(10)
         this.player.setDepth(10)
-        this.monstreviolet.setDepth(10)
+        this.monstre-violet.setDepth(10)
     }
 
     update(){
