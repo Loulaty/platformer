@@ -18,12 +18,7 @@ class Zoo extends Tableau{
 
         let groupeVert = this.physics.add.staticGroup();
         groupeVert.create(300, 250, 'ground');
-        groupeVert.create(350, 260, 'ground');
-        groupeVert.create(400, 270, 'ground');
-        groupeVert.create(450, 280, 'ground');
-        groupeVert.create(500, 290, 'ground');
-        groupeVert.create(700, 300, 'ground');
-
+       
         groupeVert.children.iterate(function (child) {
             child.setTintFill(0x00FF00); //applique une couleur verte
             child.setDisplaySize(40,50);//taille de l'objet
