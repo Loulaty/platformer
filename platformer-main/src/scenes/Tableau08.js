@@ -31,8 +31,7 @@ class Tableau08 extends Tableau{
         }
         this.physics.add.overlap(this.player, this.stars, this.ramasserEtoile, null, this);
         this.physics.add.collider(this.player,this.platforms);
-
-        new MonsterFly(this,400,100);
+        
         new monstreviolet(this,50,350);
 
         //on change de ciel, on fait une tileSprite ce qui permet d'avoir une image qui se répète
@@ -63,6 +62,7 @@ class Tableau08 extends Tableau{
         this.platforms.setDepth(10)
         this.stars.setDepth(10)
         this.player.setDepth(10)
+        this.monstreviolet.setDepth(10)
     }
 
     update(){
