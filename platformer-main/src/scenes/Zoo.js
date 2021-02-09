@@ -14,6 +14,14 @@ class Zoo extends Tableau{
     }
     create() {
         super.create();
+
+        let groupeVert = this.physics.add.staticGroup();
+        groupeVert.create(300, 250, 'ground');
+        groupeVert.create(350, 260, 'ground');
+        groupeVert.create(400, 270, 'ground');
+        groupeVert.create(450, 280, 'ground');
+        groupeVert.create(500, 290, 'ground');
+        groupeVert.create(700, 300, 'ground');
         
         //etoile
         this.star3=this.physics.add.sprite(900,100,"star");
