@@ -21,7 +21,7 @@ class Zoo extends Tableau{
        
         groupeVert.children.iterate(function (child) {
             child.setTintFill(0x00FF00); //applique une couleur verte
-            child.setDisplaySize(40,100);//taille de l'objet
+            child.setDisplaySize(150,30);//taille de l'objet
             child.setOrigin(0,0);//pour positionner plus facilement
             child.refreshBody();//dit au groupe d'appliquer les changements
         });
