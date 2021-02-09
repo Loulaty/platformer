@@ -5,6 +5,7 @@ class Tableau08 extends Tableau{
         this.load.image('star', 'assets/star.png');
         this.load.image('ground', 'assets/platform.png');
         this.load.image('sky-2', 'assets/sky-2.png');
+        this.load.image('sky', 'assets/sky.png');
     }
     create() {
         super.create();
@@ -48,7 +49,7 @@ class Tableau08 extends Tableau{
             0,
             this.sys.canvas.width,
             this.sys.canvas.height,
-            'sky-2'
+            'sky'
         );
         this.sky2.setScrollFactor(0);
         this.sky2.setOrigin(0,0);
