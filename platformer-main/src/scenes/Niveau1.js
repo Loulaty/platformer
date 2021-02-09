@@ -1,4 +1,4 @@
-class Zoo extends Tableau{
+class Niveau1 extends Tableau{
 
     preload() {
         super.preload();
