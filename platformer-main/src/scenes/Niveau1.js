@@ -54,11 +54,11 @@ class Niveau1 extends Tableau{
 
         var musicConfig = {
             mute: false,
-            volume: 1,
+            volume: 0.5,
             rate : 1,
             detune: 0,
             seek: 0,
-            loop: true,
+            loop: false,
             delay:0,
         }
         this.music.play(musicConfig);
