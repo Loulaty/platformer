@@ -11,6 +11,9 @@ class Niveau1 extends Tableau{
         this.load.image('monster-fly', 'assets/monster-fly.png');
         this.load.image('ground', 'assets/platform.png');
 
+        this.load.audio('fond', 'assets/sounds/fond.mp3');
+
+
 
     }
     create() {
@@ -46,6 +49,21 @@ class Niveau1 extends Tableau{
         new monstreviolet(this,50,350);
         new monstre2(this,50,350);
         new monstre3(this,40,350);
+
+        this.music = this.sound.add('fond');
+
+        var musicConfig = {
+            mute: false,
+            volume: 1,
+            rate : 1,
+            detune: 0,
+            seek: 0,
+            loop: false,
+            delay:0,
+        }
+        this.music.play(musicConfig);
+
+        
 
         
     }

@@ -49,6 +49,7 @@ let config = {
 
     },
     autoRound: false
+    
 };
 let game;
 function resize() {
