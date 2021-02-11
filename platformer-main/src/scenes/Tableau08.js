@@ -10,7 +10,7 @@ class Tableau08 extends Tableau{
     }
     create() {
         super.create();
-        
+
         //on définit la taille du tableau
         let largeurDuTableau=4000;
         let hauteurDuTableau=600; //la hauteur est identique au cadre du jeu
@@ -19,6 +19,19 @@ class Tableau08 extends Tableau{
 
         this.cameras.main.startFollow(this.player, false, 0.05, 0.05);
 
+        //quelques étoiles et plateformes qui vont avec
+        this.stars=this.physics.add.group();
+        this.platforms=this.physics.add.staticGroup();
+        for(let posX=20;posX<largeurDuTableau;posX+=100){
+            let etoileY=350+Math.sin(posX)*100;
+            let star=this.stars.create(posX ,etoileY,"star");
+            star.body.allowGravity=false;
+            let plate=this.platforms.create(posX ,etoileY+50,"ground");
+            plate.setDisplaySize(60,10);
+            plate.refreshBody();
+        }
+        this.physics.add.overlap(this.player, this.stars, this.ramasserEtoile, null, this);
+        this.physics.add.collider(this.player,this.platforms);
 
 
         //on change de ciel, on fait une tileSprite ce qui permet d'avoir une image qui se répète
