@@ -12,7 +12,7 @@ class monstre3 extends ObjetEnnemi{
         this.setDisplaySize(64,64);
         this.setVelocityX(200);
         this.setCollideWorldBounds(true);
-        this.setBounce(1.1);
+        this.setBounce(1);
     }
 
 }
