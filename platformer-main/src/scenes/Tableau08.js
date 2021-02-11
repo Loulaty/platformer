@@ -7,6 +7,8 @@ class Tableau08 extends Tableau{
         this.load.image('sky-2', 'assets/sky-2.png');
         this.load.image('sky', 'assets/sky.png');
         this.load.image('monstre-violet', 'assets/monstre-violet.png');
+
+        this.load.audio('fond', 'assets/sounds/fond.mp3');
     }
     create() {
         super.create();
@@ -62,6 +64,21 @@ class Tableau08 extends Tableau{
         this.platforms.setDepth(10);
         this.stars.setDepth(10);
         this.player.setDepth(10);
+
+        /////musique/////////////////////////////////////////////////////////////////////////
+        this.music = this.sound.add('fond');
+
+        var musicConfig = {
+            mute: false,
+            volume: 0.2,
+            rate : 1,
+            detune: 0,
+            seek: 0,
+            loop: false,
+            delay:0,
+        }
+        this.music.play(musicConfig);
+        ///////////////////////////////////////////////////////////////////////////////////////
     }
 
     update(){
