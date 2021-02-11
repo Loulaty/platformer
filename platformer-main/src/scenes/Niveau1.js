@@ -10,6 +10,7 @@ class Niveau1 extends Tableau{
         this.load.image('monstre5', 'assets/monstre5.png');
         this.load.image('monster-fly', 'assets/monster-fly.png');
         this.load.image('ground', 'assets/platform.png');
+        this.load.image('sky-2', 'assets/sky-2.png');
 
         this.load.audio('fond', 'assets/sounds/fond.mp3');
 
