@@ -25,7 +25,7 @@ class Niveau1 extends Tableau{
         groupeVert.create(150, 320, 'ground');
         groupeVert.create(270, 240, 'ground');
         groupeVert.create(380, 200, 'ground');
-        groupeVert.create(490, 140, 'ground');
+        groupeVert.create(530, 260, 'ground');
        
         groupeVert.children.iterate(function (child) {
             child.allowGravity=false;
