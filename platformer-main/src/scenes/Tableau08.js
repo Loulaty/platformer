@@ -13,7 +13,7 @@ class Tableau08 extends Tableau{
 
         //on définit la taille du tableau
         let largeurDuTableau=4000;
-        let hauteurDuTableau=400; //la hauteur est identique au cadre du jeu
+        let hauteurDuTableau=600; //la hauteur est identique au cadre du jeu
         this.cameras.main.setBounds(0, 0, largeurDuTableau, hauteurDuTableau);
         this.physics.world.setBounds(0, 0, largeurDuTableau,  hauteurDuTableau);
 
