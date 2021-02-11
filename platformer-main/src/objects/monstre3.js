@@ -10,9 +10,9 @@ class monstre3 extends ObjetEnnemi{
         this.body.allowGravity=true;
 
         this.setDisplaySize(64,64);
-        this.setVelocityX(200);
+        this.setVelocityX(300);
         this.setCollideWorldBounds(true);
-        this.setBounce(0.8);
+        this.setBounce(0);
     }
 
 }
