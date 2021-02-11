@@ -12,8 +12,7 @@ class monstreviolet extends ObjetEnnemi{
         this.setDisplaySize(64,64);
         this.setVelocityX(50);
         this.setCollideWorldBounds(true);
-        this.setBounce(1.1);
-        this.setMaxVelocityX(70);
+        this.setBounce(1.0005);
     }
 
 }
