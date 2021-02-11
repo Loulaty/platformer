@@ -91,5 +91,16 @@ class Niveau1 extends Tableau{
         
     }
 
+    update(){
+        super.update();
+        //le ciel se déplace moins vite que la caméra pour donner un effet paralax
+        this.sky.tilePositionX=this.cameras.main.scrollX*0.6;
+        this.sky.tilePositionY=this.cameras.main.scrollY*0.2;
+        //le deuxième ciel se déplace moins vite pour accentuer l'effet
+        this.sky2.tilePositionX=this.cameras.main.scrollX*0.3+500;
+        this.sky2.tilePositionY=this.cameras.main.scrollY*0.1+30;
+    }
+
+
 
 }
