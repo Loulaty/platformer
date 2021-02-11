@@ -19,6 +19,13 @@ class Niveau1 extends Tableau{
     create() {
         super.create();
 
+        let largeurDuTableau=4000;
+        let hauteurDuTableau=600; //la hauteur est identique au cadre du jeu
+        this.cameras.main.setBounds(0, 0, largeurDuTableau, hauteurDuTableau);
+        this.physics.world.setBounds(0, 0, largeurDuTableau,  hauteurDuTableau);
+
+        this.cameras.main.startFollow(this.player, false, 0.05, 0.05);
+
         
         let groupeVert = this.physics.add.staticGroup();
         groupeVert.create(10, 250, 'ground');
