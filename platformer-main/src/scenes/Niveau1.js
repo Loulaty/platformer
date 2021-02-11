@@ -19,6 +19,22 @@ class Niveau1 extends Tableau{
     create() {
         super.create();
 
+        this.platforms=this.physics.add.group();
+        for(let i=1 ;i<=2;i++){
+            let plateforme=this.platforms.create(largeur*i ,i*64+150,"ground");
+            plateforme.setOrigin(0,0);
+            plateforme.setDisplaySize(64,8);
+            plateforme.body.allowGravity=false;
+            plateforme.setBounceX(1);
+            plateforme.setCollideWorldBounds(true);
+            plateforme.setVelocityX(100)
+            plateforme.body.setMaxVelocityX(100);
+            plateforme.setImmovable(true);
+            //plateforme.body.setMaxVelocityY(0)
+            plateforme.setFriction(1);
+        }
+
+
         
         let groupeVert = this.physics.add.staticGroup();
         groupeVert.create(10, 250, 'ground');
