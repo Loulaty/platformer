@@ -26,6 +26,21 @@ class Niveau1 extends Tableau{
 
         this.cameras.main.startFollow(this.player, false, 0.05, 0.05);
 
+        this.sky.setOrigin(0,0);
+        this.sky.setScrollFactor(0);//fait en sorte que le ciel ne suive pas la caméra
+        //on ajoute une deuxième couche de ciel
+        this.sky2=this.add.tileSprite(
+            0,
+            0,
+            this.sys.canvas.width,
+            this.sys.canvas.height,
+            'sky'
+        );
+        this.sky2.setScrollFactor(0);
+        this.sky2.setOrigin(0,0);
+        this.sky2.alpha=0;
+        //this.sky.tileScaleX=this.sky.tileScaleY=0.8;
+
         
         let groupeVert = this.physics.add.staticGroup();
         groupeVert.create(10, 250, 'ground');
