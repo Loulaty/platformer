@@ -86,6 +86,11 @@ class Niveau1 extends Tableau{
         }
         this.music.play(musicConfig);
 
+
+        //fait passer les éléments devant le ciel
+        this.platforms.setDepth(10);
+        this.stars.setDepth(10);
+        this.player.setDepth(10);
         
 
         
