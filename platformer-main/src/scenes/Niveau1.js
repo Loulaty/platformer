@@ -24,7 +24,7 @@ class Niveau1 extends Tableau{
 
         //on définit la taille du tableau
         let largeurDuTableau=4000;
-        let hauteurDuTableau=500; //la hauteur est identique au cadre du jeu
+        let hauteurDuTableau=450; //la hauteur est identique au cadre du jeu
         this.cameras.main.setBounds(0, 0, largeurDuTableau, hauteurDuTableau);
         this.physics.world.setBounds(0, 0, largeurDuTableau,  hauteurDuTableau);
 
@@ -78,10 +78,17 @@ class Niveau1 extends Tableau{
         this.star1.setBounce(0);
         this.physics.add.overlap(this.player, this.star1, this.ramasserEtoile, null, this);
 
+        //plateformes
+        let groupeVert = this.physics.add.staticGroup();
+        groupeVert.create(0, 250, 'ground');
+        groupeVert.children.iterate(function (child) {
+            child.setDisplaySize(100,50);//taille de l'objet
+            child.setOrigin(0,0);//pour positionner plus facilement
+            child.refreshBody();//dit au groupe d'appliquer les changements
+        });
 
-        
+        this.physics.add.collider(this.player, groupeVert);//le joueur rebondit sur les plateformes du goupe vert
 
-        
     }
 
     update(){
