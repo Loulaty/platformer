@@ -20,9 +20,11 @@ class Niveau1 extends Tableau{
     create() {
         super.create();
 
+        /////////////////////////////////////////////// La BASE DU NIVEAU /////////////////////////////////////
+
         //on définit la taille du tableau
         let largeurDuTableau=4000;
-        let hauteurDuTableau=600; //la hauteur est identique au cadre du jeu
+        let hauteurDuTableau=500; //la hauteur est identique au cadre du jeu
         this.cameras.main.setBounds(0, 0, largeurDuTableau, hauteurDuTableau);
         this.physics.world.setBounds(0, 0, largeurDuTableau,  hauteurDuTableau);
 
@@ -52,9 +54,8 @@ class Niveau1 extends Tableau{
         this.sky2.setScrollFactor(0);
         this.sky2.setOrigin(0,0);
         this.sky2.alpha=0;
-        //this.sky.tileScaleX=this.sky.tileScaleY=0.8;
 
-        
+        this.player.setDepth(10);
 
         this.music = this.sound.add('fond');
 
@@ -68,6 +69,14 @@ class Niveau1 extends Tableau{
             delay:0,
         }
         this.music.play(musicConfig);
+
+                /////////////////////////////////////////////// Les AJOUTS /////////////////////////////////////
+
+        //des étoiles
+        this.star1=this.physics.add.sprite(200,100,"star");
+        this.star1.setCollideWorldBounds(true);
+        this.star1.setBounce(0);
+        this.physics.add.overlap(this.player, this.star1, this.ramasserEtoile, null, this);
 
 
         
