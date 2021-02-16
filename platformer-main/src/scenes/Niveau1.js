@@ -20,6 +20,7 @@ class Niveau1 extends Tableau{
     create() {
         super.create();
 
+        //on définit la taille du tableau
         let largeurDuTableau=4000;
         let hauteurDuTableau=600; //la hauteur est identique au cadre du jeu
         this.cameras.main.setBounds(0, 0, largeurDuTableau, hauteurDuTableau);
@@ -27,6 +28,17 @@ class Niveau1 extends Tableau{
 
         this.cameras.main.startFollow(this.player, false, 0.05, 0.05);
 
+        this.physics.add.collider(this.player,this.platforms);
+
+
+        //on change de ciel, on fait une tileSprite ce qui permet d'avoir une image qui se répète
+        this.sky=this.add.tileSprite(
+            0,
+            0,
+            this.sys.canvas.width,
+            this.sys.canvas.height,
+            'sky-2'
+        );
         this.sky.setOrigin(0,0);
         this.sky.setScrollFactor(0);//fait en sorte que le ciel ne suive pas la caméra
         //on ajoute une deuxième couche de ciel
@@ -43,35 +55,6 @@ class Niveau1 extends Tableau{
         //this.sky.tileScaleX=this.sky.tileScaleY=0.8;
 
         
-        let groupeVert = this.physics.add.staticGroup();
-        groupeVert.create(10, 250, 'ground');
-        groupeVert.create(150, 320, 'ground');
-        groupeVert.create(270, 240, 'ground');
-        groupeVert.create(380, 200, 'ground');
-        groupeVert.create(530, 340, 'ground');
-       
-        groupeVert.children.iterate(function (child) {
-            child.allowGravity=false;
-            child.setDisplaySize(100,50);//taille de l'objet
-            child.setOrigin(0,0);//pour positionner plus facilement
-            child.refreshBody();//dit au groupe d'appliquer les changements
-        });
-
-        this.physics.add.collider(this.player, groupeVert);//le joueur rebondit sur les plateformes du goupe vert
-        
-        //etoile
-        this.star3=this.physics.add.sprite(900,100,"star");
-        this.star3.setCollideWorldBounds(true);
-        this.star3.setBounce(1);
-        this.physics.add.overlap(this.player, this.star3, this.ramasserEtoile, null, this);
-
-
-        this.physics.add.overlap(this.player, this.stars, this.ramasserEtoile, null, this);
-
-        new MonsterFly(this,400,100);
-        new monstreviolet(this,50,350);
-        new monstre2(this,50,350);
-        new monstre3(this,40,350);
 
         this.music = this.sound.add('fond');
 
@@ -87,10 +70,6 @@ class Niveau1 extends Tableau{
         this.music.play(musicConfig);
 
 
-        //fait passer les éléments devant le ciel
-        this.platforms.setDepth(999999);
-        this.stars.setDepth(999999);
-        this.player.setDepth(999999);
         
 
         
