@@ -56,6 +56,7 @@ class Niveau1 extends Tableau{
         this.sky2.alpha=0;
 
         this.player.setDepth(10);
+        this.blood.setDepth(10);
 
         this.music = this.sound.add('fond');
 
@@ -82,12 +83,15 @@ class Niveau1 extends Tableau{
         let groupeVert = this.physics.add.staticGroup();
         groupeVert.create(0, 250, 'ground');
         groupeVert.children.iterate(function (child) {
-            child.setDisplaySize(100,50);//taille de l'objet
-            child.setOrigin(0,0);//pour positionner plus facilement
-            child.refreshBody();//dit au groupe d'appliquer les changements
-        });
+            child.setDisplaySize(100,50);
+            child.setOrigin(0,0);
+            child.refreshBody();});
+        this.physics.add.collider(this.player, groupeVert);
 
-        this.physics.add.collider(this.player, groupeVert);//le joueur rebondit sur les plateformes du goupe vert
+        //Monstres
+        new monstre2(this,400,100);
+
+
 
     }
 
