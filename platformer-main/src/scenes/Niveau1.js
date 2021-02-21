@@ -135,6 +135,17 @@ class Niveau1 extends Tableau{
 
         //Monstres
         new monstre2(this,400,100);
+        new monstre2(this,800,100);
+        new monstre2(this,1200,100);
+        new monstre2(this,1930,100);
+        new MonsterFly(this,400,150);
+        new MonsterFly(this,1000,200);
+        new MonsterFly(this,1800,100);
+        new monstre3(this,1000,150);
+        new monstreviolet(this,450,300);
+        new monstreviolet(this,800,300);
+        new monstreviolet(this,1800,300);
+
 
 
 
