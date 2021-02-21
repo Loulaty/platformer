@@ -23,7 +23,7 @@ class Niveau1 extends Tableau{
         /////////////////////////////////////////////// La BASE DU NIVEAU /////////////////////////////////////
 
         //on définit la taille du tableau
-        let largeurDuTableau=4000;
+        let largeurDuTableau=2000;
         let hauteurDuTableau=450; //la hauteur est identique au cadre du jeu
         this.cameras.main.setBounds(0, 0, largeurDuTableau, hauteurDuTableau);
         this.physics.world.setBounds(0, 0, largeurDuTableau,  hauteurDuTableau);
