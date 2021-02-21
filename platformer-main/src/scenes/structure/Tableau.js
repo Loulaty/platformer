@@ -59,12 +59,12 @@ class Tableau extends Phaser.Scene{
     saigne(object,onComplete){
         let me=this;
         me.blood.visible=true;
-        me.blood.rotation = Phaser.Math.Between(0,6);
+       // me.blood.rotation = Phaser.Math.Between(0,6);
         me.blood.x=object.x;
         me.blood.y=object.y;
         me.tweens.add({
             targets:me.blood,
-            duration:200,
+            duration:500,
             displayHeight:{
                 from:40,
                 to:70,
