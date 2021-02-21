@@ -74,19 +74,64 @@ class Niveau1 extends Tableau{
                 /////////////////////////////////////////////// Les AJOUTS /////////////////////////////////////
 
         //des étoiles
-        this.star1=this.physics.add.sprite(200,100,"star");
+        this.star1=this.physics.add.sprite(300,100,"star");
         this.star1.setCollideWorldBounds(true);
-        this.star1.setBounce(0);
+        this.star1.setBounce(1);
+
+        this.star2=this.physics.add.sprite(600,0,"star");
+        this.star2.setCollideWorldBounds(true);
+        this.star2.setBounce(0);
+
+        this.star3=this.physics.add.sprite(1400,0,"star");
+        this.star3.setCollideWorldBounds(true);
+        this.star3.setBounce(1);
+
+        this.star4=this.physics.add.sprite(1080,0,"star");
+        this.star4.setCollideWorldBounds(true);
+        this.star4.setBounce(0.7);
+
+        this.star5=this.physics.add.sprite(1980,60,"star");
+        this.star5.setCollideWorldBounds(true);
+        this.star5.setBounce(1);
+
+        this.star6=this.physics.add.sprite(1900,20,"star");
+        this.star6.setCollideWorldBounds(true);
+        this.star6.setBounce(1);
+
         this.physics.add.overlap(this.player, this.star1, this.ramasserEtoile, null, this);
+        this.physics.add.overlap(this.player, this.star2, this.ramasserEtoile, null, this);
+        this.physics.add.overlap(this.player, this.star3, this.ramasserEtoile, null, this);
+        this.physics.add.overlap(this.player, this.star4, this.ramasserEtoile, null, this);
+        this.physics.add.overlap(this.player, this.star5, this.ramasserEtoile, null, this);
+        this.physics.add.overlap(this.player, this.star6, this.ramasserEtoile, null, this);
+
+        this.physics.add.collider(this.player,this.platforms);
+
 
         //plateformes
         let groupeVert = this.physics.add.staticGroup();
         groupeVert.create(0, 250, 'ground');
+        groupeVert.create(140, 300, 'ground');
+        groupeVert.create(350, 200, 'ground');
+        groupeVert.create(550, 70, 'ground');
+        groupeVert.create(670, 400, 'ground');
+        groupeVert.create(820, 350, 'ground');
+        groupeVert.create(1000, 250, 'ground');
+        groupeVert.create(1250, 250, 'ground');
+        groupeVert.create(1500, 180, 'ground');
+        groupeVert.create(1750, 210, 'ground');
+        groupeVert.create(1820, 100, 'ground');
         groupeVert.children.iterate(function (child) {
             child.setDisplaySize(100,50);
             child.setOrigin(0,0);
             child.refreshBody();});
         this.physics.add.collider(this.player, groupeVert);
+        this.physics.add.collider(this.star1, groupeVert);
+        this.physics.add.collider(this.star2, groupeVert);
+        this.physics.add.collider(this.star3, groupeVert);
+        this.physics.add.collider(this.star4, groupeVert);
+        this.physics.add.collider(this.star5, groupeVert);
+        this.physics.add.collider(this.star6, groupeVert);
 
         //Monstres
         new monstre2(this,400,100);
