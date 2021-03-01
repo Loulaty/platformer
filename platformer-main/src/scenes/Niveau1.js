@@ -62,7 +62,7 @@ class Niveau1 extends Tableau{
 
         var musicConfig = {
             mute: false,
-            volume: 0.2,
+            volume: 0.1,
             rate : 1,
             detune: 0,
             seek: 0,
