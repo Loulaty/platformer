@@ -76,7 +76,7 @@ class Niveau1 extends Tableau{
         //des étoiles
         this.star1=this.physics.add.sprite(300,100,"star");
         this.star1.setCollideWorldBounds(true);
-        this.star1.setBounce(1);
+        this.star1.setBounce(0);
 
         this.star2=this.physics.add.sprite(600,0,"star");
         this.star2.setCollideWorldBounds(true);
@@ -84,19 +84,19 @@ class Niveau1 extends Tableau{
 
         this.star3=this.physics.add.sprite(1400,0,"star");
         this.star3.setCollideWorldBounds(true);
-        this.star3.setBounce(1);
+        this.star3.setBounce(0);
 
         this.star4=this.physics.add.sprite(1080,0,"star");
         this.star4.setCollideWorldBounds(true);
-        this.star4.setBounce(0.7);
+        this.star4.setBounce(0);
 
         this.star5=this.physics.add.sprite(1980,60,"star");
         this.star5.setCollideWorldBounds(true);
-        this.star5.setBounce(1);
+        this.star5.setBounce(0);
 
         this.star6=this.physics.add.sprite(1900,20,"star");
         this.star6.setCollideWorldBounds(true);
-        this.star6.setBounce(1);
+        this.star6.setBounce(0);
 
         this.physics.add.overlap(this.player, this.star1, this.ramasserEtoile, null, this);
         this.physics.add.overlap(this.player, this.star2, this.ramasserEtoile, null, this);
