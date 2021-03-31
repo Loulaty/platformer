@@ -23,18 +23,7 @@ class Niveau1 extends Tableau{
 
         /////////////////////////////////////////////// La BASE DU NIVEAU /////////////////////////////////////
 
-        this.music = this.sound.add('fond');
-
-        var musicConfig = {
-            mute: false,
-            volume: 0.3,
-            rate : 1,
-            detune: 0,
-            seek: 0,
-            loop: false,
-            delay:0,
-        }
-        this.music.play(musicConfig);
+        
 
         //on définit la taille du tableau
         let largeurDuTableau=2000;
@@ -144,6 +133,19 @@ class Niveau1 extends Tableau{
         new monstre3(this,1000,150);
         new monstreviolet(this,450,300);
         new monstreviolet(this,1800,300);
+
+        this.music = this.sound.add('fond');
+
+        var musicConfig = {
+            mute: false,
+            volume: 0.5,
+            rate : 1,
+            detune: 0,
+            seek: 0,
+            loop: false,
+            delay:0,
+        }
+        this.music.play(musicConfig);
 
 
 
