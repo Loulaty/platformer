@@ -135,7 +135,6 @@ class Niveau1 extends Tableau{
         new monstreviolet(this,1800,300);
 
         this.music = this.sound.add('fond');
-
         var musicConfig = {
             mute: false,
             volume: 0.5,
@@ -146,6 +145,8 @@ class Niveau1 extends Tableau{
             delay:0,
         }
         this.music.play(musicConfig);
+
+       
 
 
 
