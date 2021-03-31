@@ -3,6 +3,7 @@ class Niveau1 extends Tableau{
     preload() {
         super.preload();
         this.load.image('star', 'assets/star.png');
+        this.load.image('star2', 'assets/star2.png');
         this.load.image('monster-violet', 'assets/monster-violet.png');
         this.load.image('monstre2', 'assets/monstre2.png');
         this.load.image('monstre3', 'assets/monstre3.png');
@@ -78,7 +79,7 @@ class Niveau1 extends Tableau{
         this.star1.setCollideWorldBounds(true);
         this.star1.setBounce(0);
 
-        this.star2=this.physics.add.sprite(600,0,"star");
+        this.star2=this.physics.add.sprite(600,0,"star2");
         this.star2.setCollideWorldBounds(true);
         this.star2.setBounce(0);
 
@@ -86,7 +87,7 @@ class Niveau1 extends Tableau{
         this.star3.setCollideWorldBounds(true);
         this.star3.setBounce(0);
 
-        this.star4=this.physics.add.sprite(1080,0,"star");
+        this.star4=this.physics.add.sprite(1080,0,"star2");
         this.star4.setCollideWorldBounds(true);
         this.star4.setBounce(0);
 
@@ -94,7 +95,7 @@ class Niveau1 extends Tableau{
         this.star5.setCollideWorldBounds(true);
         this.star5.setBounce(0);
 
-        this.star6=this.physics.add.sprite(1900,20,"star");
+        this.star6=this.physics.add.sprite(1900,20,"star2");
         this.star6.setCollideWorldBounds(true);
         this.star6.setBounce(0);
 
