@@ -23,6 +23,19 @@ class Niveau1 extends Tableau{
 
         /////////////////////////////////////////////// La BASE DU NIVEAU /////////////////////////////////////
 
+        this.music = this.sound.add('fond');
+
+        var musicConfig = {
+            mute: false,
+            volume: 0.3,
+            rate : 1,
+            detune: 0,
+            seek: 0,
+            loop: false,
+            delay:0,
+        }
+        this.music.play(musicConfig);
+
         //on définit la taille du tableau
         let largeurDuTableau=2000;
         let hauteurDuTableau=450; //la hauteur est identique au cadre du jeu
@@ -59,18 +72,7 @@ class Niveau1 extends Tableau{
         this.player.setDepth(10);
         this.blood.setDepth(10);
 
-        this.music = this.sound.add('fond');
-
-        var musicConfig = {
-            mute: false,
-            volume: 0.3,
-            rate : 1,
-            detune: 0,
-            seek: 0,
-            loop: false,
-            delay:0,
-        }
-        this.music.play(musicConfig);
+     
 
                 /////////////////////////////////////////////// Les AJOUTS /////////////////////////////////////
 
