@@ -18,7 +18,7 @@ class Ui extends Phaser.Scene{
          */
         this._scoreText = this.add.text(16, 16, '...', {
             font:'32px "Syne Mono"',
-            fill: '#fff'
+            fill: '#F2DAF6'
         });
 
         /**
@@ -29,7 +29,7 @@ class Ui extends Phaser.Scene{
         this._tableauText = this.add.text(this.sys.canvas.width-16, 16, '...', {
             font:'32px "Syne Mono"',
             align: 'right',
-            fill: '#fff'
+            fill: '#F2DAF6'
         })
 
         /**
@@ -40,7 +40,7 @@ class Ui extends Phaser.Scene{
         this._tableauTextClass = this.add.text(this.sys.canvas.width-16, 16+32, '...', {
             font:'24px "Syne Mono"',
             align: 'right',
-            fill: '#fff',
+            fill: '#F2DAF6',
         }).setAlpha(0.5)
 
         this._tableauText.originX=1;
